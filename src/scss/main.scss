@@ -1,13 +1,16 @@
 @import "~normalize.css";
 
-@import "_variables";
-@import "modules/hello.scss";
-
 body {
-  background: $wtf;
+  background: #aaa;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+}
+
+.editor {
+  background-color: #afafaf;
+  width: 500px;
+  height: 300px;
 }
