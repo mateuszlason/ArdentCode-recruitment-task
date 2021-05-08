@@ -12,24 +12,29 @@ buttonSave.addEventListener("click", () => {
 });
 
 function download() {
-  const json = { text: textArea.value };
-  const a = document.createElement("a");
-  const file = new Blob([JSON.stringify(json, null, 2)], {
+  if (!textArea.value) return;
+  const obj = { text: textArea.value };
+  const link = document.createElement("a");
+  const prompt = window.prompt(
+    "Name your file before downloading.(Default is 'text')"
+  );
+  const file = new Blob([JSON.stringify(obj)], {
     type: "application/json",
   });
-  a.href = URL.createObjectURL(file);
-  a.download = "text.json";
-  a.click();
+  link.href = URL.createObjectURL(file);
+  if (prompt) link.download = `${prompt}.json`;
+  else if (prompt === "") link.download = "text.json";
+  else if (prompt === null) return;
+  link.click();
 }
 
 function importText() {
   const file = document.getElementById("file").files[0];
   const fileReader = new FileReader();
   fileReader.onload = (e) => {
-    const { text } = JSON.parse(e.target.result);
+    const content = JSON.parse(e.target.result);
 
-    textArea.value = text;
+    textArea.value = content[Object.keys(content)[0]];
   };
-
-  fileReader.readAsText(file, "UTF-8");
+  file && fileReader.readAsText(file, "UTF-8");
 }
