@@ -16,10 +16,60 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
   </head>
   <body>
-    <main>
-      <input type="file" id="file" /><button id="buttonImport">Import</button>
-      <button id="buttonSave">Save</button>
-      <textarea class="editor editor--js"></textarea>
+    <main class="main">
+      <div class="toolbar">
+        <input type="file" id="file" /><button id="buttonImport">Import</button>
+        <button id="buttonSave">Save</button>
+        <ul class="toolbar-list">
+          <li class="toolbar-list__item">
+            <button data-command="justifyLeft" class="toolbar-list__button">
+              Justify Left
+            </button>
+          </li>
+          <li class="toolbar-list__item">
+            <button data-command="justifyCenter" class="toolbar-list__button">
+              Justify Center
+            </button>
+          </li>
+          <li class="toolbar-list__item">
+            <button data-command="bold" class="toolbar-list__button">
+              Bold
+            </button>
+          </li>
+          <li class="toolbar-list__item">
+            <button data-command="italic" class="toolbar-list__button">
+              Italic
+            </button>
+          </li>
+          <li class="toolbar-list__item">
+            <button data-command="underline" class="toolbar-list__button">
+              Underline
+            </button>
+          </li>
+          <li class="toolbar-list__item">
+            <button
+              data-command="insertOrderedList"
+              class="toolbar-list__button"
+            >
+              Ordered List
+            </button>
+          </li>
+          <li class="toolbar-list__item">
+            <button
+              data-command="insertUnorderedList"
+              class="toolbar-list__button"
+            >
+              Unordered List
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <div
+        style="width: 300px; height: 300px"
+        id="content"
+        contenteditable="true"
+      ></div>
     </main>
   </body>
 </html>
