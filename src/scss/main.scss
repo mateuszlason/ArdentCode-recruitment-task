@@ -18,6 +18,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   font-family: monospace;
+  overflow-x: hidden;
 }
 
 sub {
@@ -35,30 +36,19 @@ sup {
   justify-content: center;
   &__heading {
     color: #005ece;
-    font-size: 52px;
+    font-size: 22px;
     font-family: monospace;
-  }
-
-  &__content {
-    font-family: Arial;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    background: white;
-    color: black;
-    padding: 96px 84px;
-    max-width: 804px;
-    width: 100%;
-    margin: 15px;
-    min-height: 600px;
-    align-self: stretch;
-    &::selection,
-    *::selection {
-      color: unset;
-      background: lightsteelblue;
+    @media (min-width: 630px) {
+      font-size: 34px;
+    }
+    @media (min-width: 1184px) {
+      font-size: 52px;
     }
   }
+
   &__footer {
     color: #005ece;
-    margin: 18px 0 10px;
+    margin: 72px 0 10px;
     font-size: 13px;
     & a {
       color: #005ece;
@@ -94,5 +84,34 @@ sup {
 }
 
 .margin-left {
-  margin-left: 22px;
+  margin-left: 14px;
+  @media (min-width: 1184px) {
+    margin-left: 21px;
+  }
+}
+.content {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  &__text {
+    font-family: Arial;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background: white;
+    color: black;
+    max-width: 804px;
+    width: 100%;
+    min-height: 1133px;
+    align-self: stretch;
+    padding: 64px 48px;
+    margin: 8px;
+    @media (min-width: 1184px) {
+      padding: 96px 84px;
+      margin: 15px;
+    }
+    &::selection,
+    *::selection {
+      color: unset;
+      background: lightsteelblue;
+    }
+  }
 }

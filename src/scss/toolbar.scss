@@ -29,7 +29,13 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
-      margin: 0 64px 0 20px;
+      margin: 0 24px 0 10px;
+      @media (min-width: 630px) {
+        margin: 0 48px 0 15px;
+      }
+      @media (min-width: 1184px) {
+        margin: 0 48px 0 20px;
+      }
       & label {
         display: flex;
         justify-content: center;
@@ -42,7 +48,7 @@
       display: flex;
       flex-flow: column;
       justify-content: center;
-      margin: 0 10px;
+      margin: 0 30px;
     }
     &__flex-row {
       display: flex;

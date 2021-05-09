@@ -2,7 +2,7 @@ import "../scss/main.scss";
 
 const buttonSave = document.getElementById("buttonDownload");
 const fileInput = document.getElementById("file");
-const editableDiv = document.querySelector(".main__content");
+const editableDiv = document.querySelector(".content__text");
 const buttons = document.querySelectorAll(".toolbar-list__button");
 const input = document.querySelector(".toolbar-list__input");
 const select = document.querySelectorAll(".toolbar-list__select");
