@@ -1,11 +1,13 @@
 .toolbar {
   color: black;
   width: 100vw;
-  background: rgb(179 169 124 / 22%);
+  background: rgb(193 183 139 / 22%);
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
 
   &-list {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    margin-left: 296px;
     & select {
       border: 1px #d3c17b solid;
       border-radius: 6px;
@@ -23,7 +25,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
-      margin-right: 20px;
+      margin: 0 80px 0 20px;
       & label {
         display: flex;
         justify-content: center;

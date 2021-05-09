@@ -6,6 +6,15 @@ const editableDiv = document.querySelector(".main__content");
 const buttons = document.querySelectorAll(".toolbar-list__button");
 const input = document.querySelector(".toolbar-list__input");
 const select = document.querySelectorAll(".toolbar-list__select");
+const storage = document.getElementById("storage");
+window.onload = () => {
+  editableDiv.innerHTML = JSON.parse(localStorage.getItem("text"));
+};
+
+storage.addEventListener("click", () => {
+  localStorage.setItem("text", JSON.stringify(editableDiv.innerHTML));
+});
+
 fileInput.addEventListener("change", () => {
   importText();
 });
