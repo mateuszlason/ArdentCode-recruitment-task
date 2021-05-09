@@ -77,7 +77,6 @@ input.addEventListener("change", (e) => {
 for (let item of select) {
   item.addEventListener("change", (e) => {
     e.preventDefault();
-    console.log("changed");
     const dataCommand = item.dataset["command"];
     document.execCommand(dataCommand, true, item.value);
     editableDiv.focus();
