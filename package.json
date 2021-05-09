@@ -1,7 +1,7 @@
 {
-  "name": "wtf-webpack-starterkit",
+  "name": "ardentcode-recruitment-task",
   "version": "1.0.1",
-  "description": "WTF Webpack starterkit",
+  "description": "",
   "main": "index.js",
   "private": true,
   "scripts": {
@@ -10,11 +10,6 @@
     "publish": "npm run build && gh-pages -d dist",
     "generate-icons": "npx pwa-asset-generator ./src/assets/img/logo.svg public/pwa -i ./src/pages/index.html -m ./public/manifest.json  --path-override pwa --type png -b \"#2D2241\""
   },
-  "keywords": [
-    "Webpack",
-    "boilerplate"
-  ],
-  "author": "Maciek Korsan",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.10.1",

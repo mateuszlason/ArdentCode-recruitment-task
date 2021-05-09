@@ -18,19 +18,9 @@
   <body>
     <main class="main">
       <div class="toolbar">
-        <input type="file" id="file" /><button id="buttonImport">Import</button>
-        <button id="buttonSave">Save</button>
+       <label> <input style="display:none;"type="file" id="file" /><a>Import file..</a></label>
+        <button id="buttonDownload">Download</button>
         <ul class="toolbar-list">
-          <li class="toolbar-list__item">
-            <button data-command="justifyLeft" class="toolbar-list__button">
-              Justify Left
-            </button>
-          </li>
-          <li class="toolbar-list__item">
-            <button data-command="justifyCenter" class="toolbar-list__button">
-              Justify Center
-            </button>
-          </li>
           <li class="toolbar-list__item">
             <button data-command="bold" class="toolbar-list__button">
               Bold
@@ -47,6 +37,32 @@
             </button>
           </li>
           <li class="toolbar-list__item">
+            <button data-command="strikeThrough" class="toolbar-list__button">
+              Strikethrough
+            </button>
+          </li>
+          <li class="toolbar-list__item">
+            <button data-command="justifyLeft" class="toolbar-list__button">
+              Justify Left
+            </button>
+          </li>
+          <li class="toolbar-list__item">
+            <button data-command="justifyCenter" class="toolbar-list__button">
+              Justify Center
+            </button>
+          </li>
+          <li class="toolbar-list__item">
+            <button data-command="justifyRight" class="toolbar-list__button">
+              Justify Right
+            </button>
+          </li>
+          <li class="toolbar-list__item">
+            <button data-command="justifyFull" class="toolbar-list__button">
+              Justify Full
+            </button>
+          </li>
+
+          <li class="toolbar-list__item">
             <button
               data-command="insertOrderedList"
               class="toolbar-list__button"
@@ -62,12 +78,67 @@
               Unordered List
             </button>
           </li>
+          <li class="toolbar-list__item">
+            <button data-command="indent" class="toolbar-list__button">
+              Indent
+            </button>
+          </li>
+          <li class="toolbar-list__item">
+            <button data-command="outdent" class="toolbar-list__button">
+              Outdent
+            </button>
+          </li>
+          <li class="toolbar-list__item">
+            <button data-command="createLink" class="toolbar-list__button">
+              Create Link
+            </button>
+          </li>
+  <li class="toolbar-list__item">
+            <button data-command="unlink" class="toolbar-list__button">
+              Unlink
+            </button>
+          </li
+          <li class="toolbar-list__item">
+            Color
+            <input
+              data-command="foreColor"
+              type="color"
+              value="#000000"
+              class="toolbar-list__button toolbar-list__input"
+            />
+          </li>
+          <li class="toolbar-list__item">
+            <button data-command="undo" class="toolbar-list__button">
+              Undo
+            </button>
+          </li>
+          <li class="toolbar-list__item">
+            <button data-command="redo" class="toolbar-list__button">
+              Redo
+            </button>
+          </li>
+          <li class="toolbar-list__item">
+            <button data-command="subscript" class="toolbar-list__button">
+              Subscript
+            </button>
+          </li>
+
+          <li class="toolbar-list__item">
+            <button data-command="superscript" class="toolbar-list__button">
+              Superscript
+            </button>
+          </li>
         </ul>
       </div>
 
       <div
-        style="width: 300px; height: 300px"
-        id="content"
+        style="
+          width: 300px;
+          height: 300px;
+          background-color: aliceblue;
+          color: black;
+        "
+        class="content content--js"
         contenteditable="true"
       ></div>
     </main>

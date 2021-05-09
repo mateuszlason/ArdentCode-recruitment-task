@@ -1,9 +1,13 @@
 import "../scss/main.scss";
 
 const buttonImport = document.getElementById("buttonImport");
-const buttonSave = document.getElementById("buttonSave");
-const textArea = document.querySelector(".editor--js");
-buttonImport.addEventListener("click", () => {
+const buttonSave = document.getElementById("buttonDownload");
+const editableDiv = document.querySelector(".content--js");
+const buttons = document.querySelectorAll(".toolbar-list__button");
+const input = document.querySelector(".toolbar-list__input");
+const fileInput = document.getElementById("file");
+
+fileInput.addEventListener("change", () => {
   importText();
 });
 
@@ -12,12 +16,10 @@ buttonSave.addEventListener("click", () => {
 });
 
 function download() {
-  if (!textArea.value) return;
-  const obj = { text: textArea.value };
+  if (!editableDiv.innerHTML) return;
+  const obj = { text: editableDiv.innerHTML };
   const link = document.createElement("a");
-  const prompt = window.prompt(
-    "Name your file before downloading.(Default is 'text')"
-  );
+  const prompt = window.prompt("Name your .json file (default is 'text').");
   const file = new Blob([JSON.stringify(obj)], {
     type: "application/json",
   });
@@ -34,7 +36,26 @@ function importText() {
   fileReader.onload = (e) => {
     const content = JSON.parse(e.target.result);
 
-    textArea.value = content[Object.keys(content)[0]];
+    editableDiv.innerHTML = content[Object.keys(content)[0]];
   };
   file && fileReader.readAsText(file, "UTF-8");
 }
+
+for (let button of buttons) {
+  button.addEventListener("mousedown", (e) => {
+    e.preventDefault();
+    const dataCommand = button.dataset["command"];
+    if (dataCommand === "createLink") {
+      const prompt = window.prompt("Provide valid URL");
+      return document.execCommand(dataCommand, true, prompt);
+    }
+    if (dataCommand === "foreColor") return;
+    document.execCommand(dataCommand, true, null);
+  });
+}
+
+input.addEventListener("input", (e) => {
+  e.preventDefault();
+  const dataCommand = input.dataset["command"];
+  return document.execCommand(dataCommand, true, input.value);
+});
