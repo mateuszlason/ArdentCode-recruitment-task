@@ -20,165 +20,235 @@
       <h1 class="main__heading">ML Text Editor 1.0.0</h1>
       <div class="toolbar">
         <ul class="toolbar-list">
-          <li class="toolbar-list__item">
+          <li class="toolbar-list__grid">
             <label>
-              <input style="display: none" type="file" id="file" /><a>
-                <img class="toolbar__image" src="../assets/img/folder.svg" /></a
-            ></label>
-            <button id="buttonDownload" class="toolbar-list__button">
-              <img class="toolbar__image" src="../assets/img/save.svg" />
+              <input style="display: none" type="file" id="file" /><a
+                class="toolbar-list__grid__anchor tooltip"
+              >
+                <img
+                  class="toolbar__image"
+                  src="../assets/img/folder.svg"
+                /><span class="bottom">Import a file</span></a
+              ></label
+            >
+            <button id="buttonDownload" class="toolbar-list__button tooltip">
+              <img class="toolbar__image" src="../assets/img/save.svg" /><span
+                class="bottom"
+                >Download the file</span
+              >
             </button>
-            <button data-command="undo" class="toolbar-list__button">
-              <img class="toolbar__image" src="../assets/img/undo.svg" />
+            <button data-command="undo" class="toolbar-list__button tooltip">
+              <img class="toolbar__image" src="../assets/img/undo.svg" /><span
+                class="bottom"
+                >Undo</span
+              >
             </button>
-            <button data-command="redo" class="toolbar-list__button">
-              <img class="toolbar__image" src="../assets/img/redo.svg" />
+            <button data-command="redo" class="toolbar-list__button tooltip">
+              <img class="toolbar__image" src="../assets/img/redo.svg" /><span
+                class="bottom"
+                >Redo</span
+              >
             </button>
           </li>
-          <li class="toolbar-list__item">
-            <img class="toolbar__image" src="../assets/img/font.svg" />
-            <select data-command="fontName" class="toolbar-list__select">
-              <option value="Arial">Arial</option>
-              <option value="Times New Roman">Times New Roman</option>
-              <option value="Verdana">Verdana</option>
-              <option value="Open sans">Open sans</option>
-              <option value="Tahoma">Tahoma</option>
-              <option value="Comic Sans MS">Comis Sans MS</option>
-            </select>
+          <li class="toolbar-list__flex-column">
+            <div class="toolbar-list__flex-row tooltip">
+              <img class="toolbar__image" src="../assets/img/font.svg" />
+              <span class="bottom">Font family</span>
+              <select data-command="fontName" class="toolbar-list__select">
+                <option selected="selected" value="Arial">Arial</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Open sans">Open sans</option>
+                <option value="Tahoma">Tahoma</option>
+                <option value="Comic Sans MS">Comis Sans MS</option>
+              </select>
+            </div>
+            <div class="tooltip toolbar-list__flex-row">
+              <span class="toolbar-list__flex-row">
+                <img
+                  class="toolbar__image"
+                  src="../assets/img/text-height.svg"
+                />
+                <span class="bottom">Font size and color</span>
+                <select data-command="fontSize" class="toolbar-list__select">
+                  <option value="1">x-small</option>
+                  <option value="2">small</option>
+                  <option selected="selected" value="3">medium</option>
+                  <option value="4">large</option>
+                  <option value="5">x-large</option>
+                  <option value="6">xx-large</option>
+                  <option value="7">xxx-large</option>
+                </select></span
+              >
+              <input
+                data-command="foreColor"
+                type="color"
+                value="#000000"
+                class="toolbar-list__button toolbar-list__input"
+              />
+            </div>
           </li>
-          <li>
-            <img class="toolbar__image" src="../assets/img/text-height.svg" />
-            <select data-command="fontSize" class="toolbar-list__select">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-            </select>
-          </li>
-          <li class="toolbar-list__item">
-            <input
-              data-command="foreColor"
-              type="color"
-              value="#000000"
-              class="toolbar-list__button toolbar-list__input"
-            />
-          </li>
-          <li class="toolbar-list__item">
-            <button data-command="bold" class="toolbar-list__button">
+
+          <li class="toolbar-list__item margin-left">
+            <button data-command="bold" class="toolbar-list__button tooltip">
               <img class="toolbar__image" src="../assets/img/bold.svg" />
+              <span class="bottom">Bold</span>
             </button>
           </li>
           <li class="toolbar-list__item">
-            <button data-command="italic" class="toolbar-list__button">
+            <button data-command="italic" class="toolbar-list__button tooltip">
               <img class="toolbar__image" src="../assets/img/italic.svg" />
+              <span class="bottom">Italic</span>
             </button>
           </li>
           <li class="toolbar-list__item">
-            <button data-command="underline" class="toolbar-list__button">
+            <button
+              data-command="underline"
+              class="toolbar-list__button tooltip"
+            >
               <img class="toolbar__image" src="../assets/img/underline.svg" />
+              <span class="bottom">Underline</span>
             </button>
           </li>
           <li class="toolbar-list__item">
-            <button data-command="strikeThrough" class="toolbar-list__button">
+            <button
+              data-command="strikeThrough"
+              class="toolbar-list__button tooltip"
+            >
               <img
                 class="toolbar__image"
                 src="../assets/img/strikethrough.svg"
               />
+              <span class="bottom">Strike-through</span>
             </button>
           </li>
           <li class="toolbar-list__item">
-            <button data-command="subscript" class="toolbar-list__button">
+            <button
+              data-command="subscript"
+              class="toolbar-list__button tooltip"
+            >
               <img class="toolbar__image" src="../assets/img/subscript.svg" />
-            </button>
-          </li>
-
-          <li class="toolbar-list__item">
-            <button data-command="superscript" class="toolbar-list__button">
-              <img class="toolbar__image" src="../assets/img/superscript.svg" />
-            </button>
-          </li>
-          <li class="toolbar-list__item">
-            <button data-command="justifyLeft" class="toolbar-list__button">
-              <img
-                class="toolbar__image"
-                src="../assets/img/justify-left.svg"
-              />
-            </button>
-          </li>
-          <li class="toolbar-list__item">
-            <button data-command="justifyCenter" class="toolbar-list__button">
-              <img
-                class="toolbar__image"
-                src="../assets/img/justify-center.svg"
-              />
-            </button>
-          </li>
-          <li class="toolbar-list__item">
-            <button data-command="justifyRight" class="toolbar-list__button">
-              <img
-                class="toolbar__image"
-                src="../assets/img/justify-right.svg"
-              />
-            </button>
-          </li>
-          <li class="toolbar-list__item">
-            <button data-command="justifyFull" class="toolbar-list__button">
-              <img
-                class="toolbar__image"
-                src="../assets/img/justify-full.svg"
-              />
+              <span class="bottom">Subscript</span>
             </button>
           </li>
 
           <li class="toolbar-list__item">
             <button
+              data-command="superscript"
+              class="toolbar-list__button tooltip"
+            >
+              <img class="toolbar__image" src="../assets/img/superscript.svg" />
+              <span class="bottom">Superscript</span>
+            </button>
+          </li>
+          <li class="toolbar-list__item margin-left">
+            <button
+              data-command="justifyLeft"
+              class="toolbar-list__button tooltip"
+            >
+              <img
+                class="toolbar__image"
+                src="../assets/img/justify-left.svg"
+              />
+              <span class="bottom">Justify left</span>
+            </button>
+          </li>
+          <li class="toolbar-list__item">
+            <button
+              data-command="justifyCenter"
+              class="toolbar-list__button tooltip"
+            >
+              <img
+                class="toolbar__image"
+                src="../assets/img/justify-center.svg"
+              />
+              <span class="bottom">Justify center</span>
+            </button>
+          </li>
+          <li class="toolbar-list__item">
+            <button
+              data-command="justifyRight"
+              class="toolbar-list__button tooltip"
+            >
+              <img
+                class="toolbar__image"
+                src="../assets/img/justify-right.svg"
+              />
+              <span class="bottom">Justify right</span>
+            </button>
+          </li>
+          <li class="toolbar-list__item">
+            <button
+              data-command="justifyFull"
+              class="toolbar-list__button tooltip"
+            >
+              <img
+                class="toolbar__image"
+                src="../assets/img/justify-full.svg"
+              />
+              <span class="bottom">Justify full</span>
+            </button>
+          </li>
+
+          <li class="toolbar-list__item margin-left">
+            <button
               data-command="insertOrderedList"
-              class="toolbar-list__button"
+              class="toolbar-list__button tooltip"
             >
               <img
                 class="toolbar__image"
                 src="../assets/img/ordered-list.svg"
               />
+              <span class="bottom">Ordered list</span>
             </button>
           </li>
           <li class="toolbar-list__item">
             <button
               data-command="insertUnorderedList"
-              class="toolbar-list__button"
+              class="toolbar-list__button tooltip"
             >
               <img
                 class="toolbar__image"
                 src="../assets/img/unordered-list.svg"
               />
+              <span class="bottom">Unordered list</span>
             </button>
           </li>
           <li class="toolbar-list__item">
-            <button data-command="indent" class="toolbar-list__button">
+            <button data-command="indent" class="toolbar-list__button tooltip">
               <img class="toolbar__image" src="../assets/img/indent.svg" />
+              <span class="bottom">Text indent</span>
             </button>
           </li>
           <li class="toolbar-list__item">
-            <button data-command="outdent" class="toolbar-list__button">
+            <button data-command="outdent" class="toolbar-list__button tooltip">
               <img class="toolbar__image" src="../assets/img/outdent.svg" />
+              <span class="bottom">Text outdent</span>
             </button>
           </li>
-          <li class="toolbar-list__item">
-            <button data-command="createLink" class="toolbar-list__button">
+          <li class="toolbar-list__item margin-left">
+            <button
+              data-command="createLink"
+              class="toolbar-list__button tooltip"
+            >
               <img class="toolbar__image" src="../assets/img/link.svg" />
+              <span class="bottom">Create a link</span>
             </button>
           </li>
           <li class="toolbar-list__item">
-            <button data-command="unlink" class="toolbar-list__button">
+            <button data-command="unlink" class="toolbar-list__button tooltip">
               <img class="toolbar__image" src="../assets/img/unlink.svg" />
+              <span class="bottom">Unlink</span>
             </button>
           </li>
 
           <li class="toolbar-list__item">
-            <button data-command="removeFormat" class="toolbar-list__button">
+            <button
+              data-command="removeFormat"
+              class="toolbar-list__button tooltip"
+            >
               <img class="toolbar__image" src="../assets/img/eraser.svg" />
+              <span class="bottom">Remove formating</span>
             </button>
           </li>
         </ul>

@@ -1,16 +1,58 @@
 .toolbar {
   color: black;
   width: 100vw;
+  background: rgb(179 169 124 / 22%);
 
   &-list {
     display: flex;
     justify-content: center;
+    & select {
+      border: 1px #d3c17b solid;
+      border-radius: 6px;
+      padding: 6px 10px;
+    }
+    & input[type="color"] {
+      height: 30px;
+      width: 30px;
+    }
     &__item {
       display: inline-block;
+      height: 34px;
+    }
+    &__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      margin-right: 20px;
+      & label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 34px;
+        height: 34px;
+      }
+    }
+    &__flex-column {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      margin: 0 10px;
+    }
+    &__flex-row {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+      & .toolbar__image {
+        margin-right: 5px;
+      }
     }
     &__button {
       border: none;
       background: none;
+      width: 34px;
+      height: 34px;
+      cursor: pointer;
     }
   }
 
