@@ -20,49 +20,66 @@
       <div class="toolbar">
         <label>
           <input style="display: none" type="file" id="file" /><a
-            >Import file..</a
-          ></label
-        >
-        <button id="buttonDownload">Download</button>
+            >Import file..
+            <img class="toolbar__image" src="../assets/img/folder.svg" /></a
+        ></label>
+        <button id="buttonDownload">
+          <img class="toolbar__image" src="../assets/img/save.svg" />
+        </button>
         <ul class="toolbar-list">
           <li class="toolbar-list__item">
             <button data-command="bold" class="toolbar-list__button">
-              Bold
+              <img class="toolbar__image" src="../assets/img/bold.svg" />
             </button>
           </li>
           <li class="toolbar-list__item">
             <button data-command="italic" class="toolbar-list__button">
-              Italic
+              <img class="toolbar__image" src="../assets/img/italic.svg" />
             </button>
           </li>
           <li class="toolbar-list__item">
             <button data-command="underline" class="toolbar-list__button">
-              Underline
+              <img class="toolbar__image" src="../assets/img/underline.svg" />
             </button>
           </li>
           <li class="toolbar-list__item">
             <button data-command="strikeThrough" class="toolbar-list__button">
-              Strikethrough
+              <img
+                class="toolbar__image"
+                src="../assets/img/strikethrough.svg"
+              />
             </button>
           </li>
           <li class="toolbar-list__item">
             <button data-command="justifyLeft" class="toolbar-list__button">
-              Justify Left
+              <img
+                class="toolbar__image"
+                src="../assets/img/justify-left.svg"
+              />
             </button>
           </li>
           <li class="toolbar-list__item">
             <button data-command="justifyCenter" class="toolbar-list__button">
-              Justify Center
+              <img
+                class="toolbar__image"
+                src="../assets/img/justify-center.svg"
+              />
             </button>
           </li>
           <li class="toolbar-list__item">
             <button data-command="justifyRight" class="toolbar-list__button">
-              Justify Right
+              <img
+                class="toolbar__image"
+                src="../assets/img/justify-right.svg"
+              />
             </button>
           </li>
           <li class="toolbar-list__item">
             <button data-command="justifyFull" class="toolbar-list__button">
-              Justify Full
+              <img
+                class="toolbar__image"
+                src="../assets/img/justify-full.svg"
+              />
             </button>
           </li>
 
@@ -71,7 +88,10 @@
               data-command="insertOrderedList"
               class="toolbar-list__button"
             >
-              Ordered List
+              <img
+                class="toolbar__image"
+                src="../assets/img/ordered-list.svg"
+              />
             </button>
           </li>
           <li class="toolbar-list__item">
@@ -79,27 +99,30 @@
               data-command="insertUnorderedList"
               class="toolbar-list__button"
             >
-              Unordered List
+              <img
+                class="toolbar__image"
+                src="../assets/img/unordered-list.svg"
+              />
             </button>
           </li>
           <li class="toolbar-list__item">
             <button data-command="indent" class="toolbar-list__button">
-              Indent
+              <img class="toolbar__image" src="../assets/img/indent.svg" />
             </button>
           </li>
           <li class="toolbar-list__item">
             <button data-command="outdent" class="toolbar-list__button">
-              Outdent
+              <img class="toolbar__image" src="../assets/img/outdent.svg" />
             </button>
           </li>
           <li class="toolbar-list__item">
             <button data-command="createLink" class="toolbar-list__button">
-              Create Link
+              <img class="toolbar__image" src="../assets/img/link.svg" />
             </button>
           </li>
           <li class="toolbar-list__item">
             <button data-command="unlink" class="toolbar-list__button">
-              Unlink
+              <img class="toolbar__image" src="../assets/img/unlink.svg" />
             </button>
           </li>
           <li class="toolbar-list__item">
@@ -113,31 +136,32 @@
           </li>
           <li class="toolbar-list__item">
             <button data-command="undo" class="toolbar-list__button">
-              Undo
+              <img class="toolbar__image" src="../assets/img/undo.svg" />
             </button>
           </li>
           <li class="toolbar-list__item">
             <button data-command="redo" class="toolbar-list__button">
-              Redo
+              <img class="toolbar__image" src="../assets/img/redo.svg" />
             </button>
           </li>
           <li class="toolbar-list__item">
             <button data-command="subscript" class="toolbar-list__button">
-              Subscript
+              <img class="toolbar__image" src="../assets/img/subscript.svg" />
             </button>
           </li>
 
           <li class="toolbar-list__item">
             <button data-command="superscript" class="toolbar-list__button">
-              Superscript
+              <img class="toolbar__image" src="../assets/img/superscript.svg" />
             </button>
           </li>
           <li class="toolbar-list__item">
             <button data-command="removeFormat" class="toolbar-list__button">
-              Remove format
+              <img class="toolbar__image" src="../assets/img/eraser.svg" />
             </button>
           </li>
           <li>
+            <img class="toolbar__image" src="../assets/img/font.svg" />
             <select data-command="fontName" class="toolbar-list__select">
               <option value="Arial">Arial</option>
               <option value="Times New Roman">Times New Roman</option>
@@ -148,6 +172,7 @@
             </select>
           </li>
           <li>
+            <img class="toolbar__image" src="../assets/img/text-height.svg" />
             <select data-command="fontSize" class="toolbar-list__select">
               <option value="1">1</option>
               <option value="2">2</option>

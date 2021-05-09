@@ -59,10 +59,7 @@ input.addEventListener("input", (e) => {
 });
 input.addEventListener("change", (e) => {
   e.preventDefault();
-  console.log("change");
-  const dataCommand = input.dataset["command"];
   editableDiv.focus();
-  document.execCommand(dataCommand, true, input.value);
 });
 
 for (let item of select) {

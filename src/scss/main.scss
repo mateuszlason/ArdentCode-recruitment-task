@@ -1,4 +1,5 @@
 @import "~normalize.css";
+@import "./toolbar.scss";
 
 body {
   background: #aaa;
@@ -19,4 +20,10 @@ sub {
 }
 sup {
   vertical-align: super;
+}
+
+.content::selection,
+.content *::selection {
+  color: unset;
+  background: lightsteelblue;
 }

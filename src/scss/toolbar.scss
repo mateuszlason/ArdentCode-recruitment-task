@@ -1,0 +1,13 @@
+.toolbar {
+  color: black;
+  &-list {
+    &__item {
+      display: inline-block;
+    }
+  }
+
+  &__image {
+    width: 22px;
+    height: 22px;
+  }
+}
