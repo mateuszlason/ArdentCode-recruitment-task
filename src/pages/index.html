@@ -18,7 +18,11 @@
   <body>
     <main class="main">
       <div class="toolbar">
-       <label> <input style="display:none;"type="file" id="file" /><a>Import file..</a></label>
+        <label>
+          <input style="display: none" type="file" id="file" /><a
+            >Import file..</a
+          ></label
+        >
         <button id="buttonDownload">Download</button>
         <ul class="toolbar-list">
           <li class="toolbar-list__item">
@@ -93,11 +97,11 @@
               Create Link
             </button>
           </li>
-  <li class="toolbar-list__item">
+          <li class="toolbar-list__item">
             <button data-command="unlink" class="toolbar-list__button">
               Unlink
             </button>
-          </li
+          </li>
           <li class="toolbar-list__item">
             Color
             <input
@@ -128,6 +132,32 @@
               Superscript
             </button>
           </li>
+          <li class="toolbar-list__item">
+            <button data-command="removeFormat" class="toolbar-list__button">
+              Remove format
+            </button>
+          </li>
+          <li>
+            <select data-command="fontName" class="toolbar-list__select">
+              <option value="Arial">Arial</option>
+              <option value="Times New Roman">Times New Roman</option>
+              <option value="Verdana">Verdana</option>
+              <option value="Open sans">Open sans</option>
+              <option value="Tahoma">Tahoma</option>
+              <option value="Comic Sans MS">Comis Sans MS</option>
+            </select>
+          </li>
+          <li>
+            <select data-command="fontSize" class="toolbar-list__select">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+            </select>
+          </li>
         </ul>
       </div>
 
@@ -138,9 +168,16 @@
           background-color: aliceblue;
           color: black;
         "
-        class="content content--js"
+        class="content"
         contenteditable="true"
       ></div>
+      <footer>
+        Icons made by
+        <a href="https://www.freepik.com" title="Freepik">Freepik</a> from
+        <a href="https://www.flaticon.com/" title="Flaticon"
+          >www.flaticon.com</a
+        >
+      </footer>
     </main>
   </body>
 </html>

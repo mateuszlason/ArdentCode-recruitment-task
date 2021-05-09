@@ -1,12 +1,11 @@
 import "../scss/main.scss";
 
-const buttonImport = document.getElementById("buttonImport");
 const buttonSave = document.getElementById("buttonDownload");
-const editableDiv = document.querySelector(".content--js");
+const fileInput = document.getElementById("file");
+const editableDiv = document.querySelector(".content");
 const buttons = document.querySelectorAll(".toolbar-list__button");
 const input = document.querySelector(".toolbar-list__input");
-const fileInput = document.getElementById("file");
-
+const select = document.querySelectorAll(".toolbar-list__select");
 fileInput.addEventListener("change", () => {
   importText();
 });
@@ -49,7 +48,6 @@ for (let button of buttons) {
       const prompt = window.prompt("Provide valid URL");
       return document.execCommand(dataCommand, true, prompt);
     }
-    if (dataCommand === "foreColor") return;
     document.execCommand(dataCommand, true, null);
   });
 }
@@ -57,5 +55,22 @@ for (let button of buttons) {
 input.addEventListener("input", (e) => {
   e.preventDefault();
   const dataCommand = input.dataset["command"];
-  return document.execCommand(dataCommand, true, input.value);
+  document.execCommand(dataCommand, true, input.value);
 });
+input.addEventListener("change", (e) => {
+  e.preventDefault();
+  console.log("change");
+  const dataCommand = input.dataset["command"];
+  editableDiv.focus();
+  document.execCommand(dataCommand, true, input.value);
+});
+
+for (let item of select) {
+  item.addEventListener("change", (e) => {
+    e.preventDefault();
+    console.log("changed");
+    const dataCommand = item.dataset["command"];
+    document.execCommand(dataCommand, true, item.value);
+    editableDiv.focus();
+  });
+}
