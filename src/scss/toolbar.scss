@@ -1,8 +1,16 @@
 .toolbar {
   color: black;
+  width: 100vw;
+
   &-list {
+    display: flex;
+    justify-content: center;
     &__item {
       display: inline-block;
+    }
+    &__button {
+      border: none;
+      background: none;
     }
   }
 

@@ -17,16 +17,55 @@
   </head>
   <body>
     <main class="main">
+      <h1 class="main__heading">ML Text Editor 1.0.0</h1>
       <div class="toolbar">
-        <label>
-          <input style="display: none" type="file" id="file" /><a
-            >Import file..
-            <img class="toolbar__image" src="../assets/img/folder.svg" /></a
-        ></label>
-        <button id="buttonDownload">
-          <img class="toolbar__image" src="../assets/img/save.svg" />
-        </button>
         <ul class="toolbar-list">
+          <li class="toolbar-list__item">
+            <label>
+              <input style="display: none" type="file" id="file" /><a>
+                <img class="toolbar__image" src="../assets/img/folder.svg" /></a
+            ></label>
+            <button id="buttonDownload" class="toolbar-list__button">
+              <img class="toolbar__image" src="../assets/img/save.svg" />
+            </button>
+            <button data-command="undo" class="toolbar-list__button">
+              <img class="toolbar__image" src="../assets/img/undo.svg" />
+            </button>
+            <button data-command="redo" class="toolbar-list__button">
+              <img class="toolbar__image" src="../assets/img/redo.svg" />
+            </button>
+          </li>
+          <li class="toolbar-list__item">
+            <img class="toolbar__image" src="../assets/img/font.svg" />
+            <select data-command="fontName" class="toolbar-list__select">
+              <option value="Arial">Arial</option>
+              <option value="Times New Roman">Times New Roman</option>
+              <option value="Verdana">Verdana</option>
+              <option value="Open sans">Open sans</option>
+              <option value="Tahoma">Tahoma</option>
+              <option value="Comic Sans MS">Comis Sans MS</option>
+            </select>
+          </li>
+          <li>
+            <img class="toolbar__image" src="../assets/img/text-height.svg" />
+            <select data-command="fontSize" class="toolbar-list__select">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+            </select>
+          </li>
+          <li class="toolbar-list__item">
+            <input
+              data-command="foreColor"
+              type="color"
+              value="#000000"
+              class="toolbar-list__button toolbar-list__input"
+            />
+          </li>
           <li class="toolbar-list__item">
             <button data-command="bold" class="toolbar-list__button">
               <img class="toolbar__image" src="../assets/img/bold.svg" />
@@ -48,6 +87,17 @@
                 class="toolbar__image"
                 src="../assets/img/strikethrough.svg"
               />
+            </button>
+          </li>
+          <li class="toolbar-list__item">
+            <button data-command="subscript" class="toolbar-list__button">
+              <img class="toolbar__image" src="../assets/img/subscript.svg" />
+            </button>
+          </li>
+
+          <li class="toolbar-list__item">
+            <button data-command="superscript" class="toolbar-list__button">
+              <img class="toolbar__image" src="../assets/img/superscript.svg" />
             </button>
           </li>
           <li class="toolbar-list__item">
@@ -125,80 +175,22 @@
               <img class="toolbar__image" src="../assets/img/unlink.svg" />
             </button>
           </li>
-          <li class="toolbar-list__item">
-            Color
-            <input
-              data-command="foreColor"
-              type="color"
-              value="#000000"
-              class="toolbar-list__button toolbar-list__input"
-            />
-          </li>
-          <li class="toolbar-list__item">
-            <button data-command="undo" class="toolbar-list__button">
-              <img class="toolbar__image" src="../assets/img/undo.svg" />
-            </button>
-          </li>
-          <li class="toolbar-list__item">
-            <button data-command="redo" class="toolbar-list__button">
-              <img class="toolbar__image" src="../assets/img/redo.svg" />
-            </button>
-          </li>
-          <li class="toolbar-list__item">
-            <button data-command="subscript" class="toolbar-list__button">
-              <img class="toolbar__image" src="../assets/img/subscript.svg" />
-            </button>
-          </li>
 
-          <li class="toolbar-list__item">
-            <button data-command="superscript" class="toolbar-list__button">
-              <img class="toolbar__image" src="../assets/img/superscript.svg" />
-            </button>
-          </li>
           <li class="toolbar-list__item">
             <button data-command="removeFormat" class="toolbar-list__button">
               <img class="toolbar__image" src="../assets/img/eraser.svg" />
             </button>
           </li>
-          <li>
-            <img class="toolbar__image" src="../assets/img/font.svg" />
-            <select data-command="fontName" class="toolbar-list__select">
-              <option value="Arial">Arial</option>
-              <option value="Times New Roman">Times New Roman</option>
-              <option value="Verdana">Verdana</option>
-              <option value="Open sans">Open sans</option>
-              <option value="Tahoma">Tahoma</option>
-              <option value="Comic Sans MS">Comis Sans MS</option>
-            </select>
-          </li>
-          <li>
-            <img class="toolbar__image" src="../assets/img/text-height.svg" />
-            <select data-command="fontSize" class="toolbar-list__select">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-            </select>
-          </li>
         </ul>
       </div>
 
-      <div
-        style="
-          width: 300px;
-          height: 300px;
-          background-color: aliceblue;
-          color: black;
-        "
-        class="content"
-        contenteditable="true"
-      ></div>
-      <footer>
+      <div class="main__content" contenteditable="true"></div>
+      <footer class="main__footer">
         Icons made by
-        <a href="https://www.freepik.com" title="Freepik">Freepik</a> from
+        <a href="https://www.freepik.com" target="_blank" title="Freepik"
+          >Freepik</a
+        >
+        from
         <a href="https://www.flaticon.com/" title="Flaticon"
           >www.flaticon.com</a
         >

@@ -1,8 +1,17 @@
 @import "~normalize.css";
 @import "./toolbar.scss";
 
+*:focus {
+  outline: none;
+}
+
 body {
-  background: #aaa;
+  background: rgb(255, 249, 225);
+  background: linear-gradient(
+    156deg,
+    rgba(255, 249, 225, 1) 0%,
+    rgba(241, 231, 191, 1) 100%
+  );
   color: #fff;
   display: flex;
   align-items: center;
@@ -10,11 +19,6 @@ body {
   min-height: 100vh;
 }
 
-.editor {
-  background-color: #afafaf;
-  width: 500px;
-  height: 300px;
-}
 sub {
   vertical-align: sub;
 }
@@ -22,8 +26,36 @@ sup {
   vertical-align: super;
 }
 
-.content::selection,
-.content *::selection {
-  color: unset;
-  background: lightsteelblue;
+.main {
+  width: 1184px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  &__heading {
+    color: #005ece;
+    font-size: 52px;
+    font-family: monospace;
+  }
+
+  &__content {
+    margin: 18px 0 32px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background: white;
+    color: black;
+    padding: 64px 52px;
+    width: 804px;
+    min-height: 600px;
+    display: block;
+    &::selection,
+    *::selection {
+      color: unset;
+      background: lightsteelblue;
+    }
+  }
+  &__footer {
+    color: #005ece;
+    & a {
+      color: #005ece;
+    }
+  }
 }
