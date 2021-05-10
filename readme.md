@@ -1,4 +1,4 @@
-![cover](https://mateuszlason.github.io/ArdentCode-recruitment-task/)
+![cover](https://mateuszlason.github.io/ArdentCode-recruitment-task/task.png)
 
 # Ardent Code | Recruitment task | Simple text editor
 
