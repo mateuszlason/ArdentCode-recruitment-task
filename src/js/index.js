@@ -21,7 +21,7 @@ newpage.addEventListener("click", () => {
 storage.addEventListener("click", () => {
   localStorage.setItem("text", JSON.stringify(editableDiv.innerHTML));
   alert(
-    "Saved! Your current session will be available next time you open this site."
+    "Saved! Your current state of document will be available next time you open this site."
   );
 });
 
