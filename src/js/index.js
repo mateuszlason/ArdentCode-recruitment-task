@@ -70,16 +70,16 @@ for (let button of buttons) {
     if (!dataCommand) return;
     if (dataCommand === "createLink") {
       const prompt = window.prompt("Provide valid URL");
-      return document.execCommand(dataCommand, true, prompt);
+      return document.execCommand(dataCommand, false, prompt);
     }
-    document.execCommand(dataCommand, true, null);
+    document.execCommand(dataCommand, false, null);
   });
 }
 
 input.addEventListener("input", (e) => {
   e.preventDefault();
   const dataCommand = input.dataset["command"];
-  document.execCommand(dataCommand, true, input.value);
+  document.execCommand(dataCommand, false, input.value);
 });
 input.addEventListener("change", (e) => {
   e.preventDefault();
@@ -90,7 +90,7 @@ for (let item of select) {
   item.addEventListener("change", (e) => {
     e.preventDefault();
     const dataCommand = item.dataset["command"];
-    document.execCommand(dataCommand, true, item.value);
+    document.execCommand(dataCommand, false, item.value);
     editableDiv.focus();
   });
 }
