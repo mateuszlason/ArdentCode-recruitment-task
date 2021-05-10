@@ -16,6 +16,7 @@
       border: 1px #d3c17b solid;
       border-radius: 6px;
       padding: 6px 10px;
+      cursor: pointer;
     }
     & input[type="color"] {
       height: 30px;
@@ -42,6 +43,7 @@
         align-items: center;
         width: 34px;
         height: 34px;
+        cursor: pointer;
       }
     }
     &__flex-column {

@@ -8,11 +8,15 @@ const input = document.querySelector(".toolbar-list__input");
 const select = document.querySelectorAll(".toolbar-list__select");
 const storage = document.getElementById("storage");
 window.onload = () => {
-  editableDiv.innerHTML = JSON.parse(localStorage.getItem("text"));
+  if (localStorage.getItem("text"))
+    editableDiv.innerHTML = JSON.parse(localStorage.getItem("text"));
 };
 
 storage.addEventListener("click", () => {
   localStorage.setItem("text", JSON.stringify(editableDiv.innerHTML));
+  alert(
+    "Saved! Your current session will be available next time you open this site."
+  );
 });
 
 fileInput.addEventListener("change", () => {
