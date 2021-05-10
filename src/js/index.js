@@ -39,7 +39,7 @@ function download() {
   const link = document.createElement("a");
   const prompt = window.prompt(`
   You are about to download your document.
-  Name your .json file (default is 'text').
+  Name your file (default is 'text').
   `);
   const file = new Blob([JSON.stringify(obj)], {
     type: "application/json",
