@@ -7,11 +7,17 @@ const buttons = document.querySelectorAll(".toolbar-list__button");
 const input = document.querySelector(".toolbar-list__input");
 const select = document.querySelectorAll(".toolbar-list__select");
 const storage = document.getElementById("storage");
+const newpage = document.getElementById("new-page");
 window.onload = () => {
   if (localStorage.getItem("text"))
     editableDiv.innerHTML = JSON.parse(localStorage.getItem("text"));
+  editableDiv.focus();
 };
 
+newpage.addEventListener("click", () => {
+  editableDiv.innerHTML = "";
+  localStorage.removeItem("text");
+});
 storage.addEventListener("click", () => {
   localStorage.setItem("text", JSON.stringify(editableDiv.innerHTML));
   alert(
@@ -59,7 +65,9 @@ function importText() {
 for (let button of buttons) {
   button.addEventListener("mousedown", (e) => {
     e.preventDefault();
+
     const dataCommand = button.dataset["command"];
+    if (!dataCommand) return;
     if (dataCommand === "createLink") {
       const prompt = window.prompt("Provide valid URL");
       return document.execCommand(dataCommand, true, prompt);
